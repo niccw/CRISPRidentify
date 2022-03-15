@@ -1,0 +1,3 @@
+[submodule "tools/CRISPRcasIdentifier/CRISPRcasIdentifier"]
+	path = tools/CRISPRcasIdentifier/CRISPRcasIdentifier
+	url = https://github.com/niccw/CRISPRcasIdentifier.git
