@@ -1,9 +1,9 @@
-from module_detection import Detection
-from module_detection_refinement import DetectionRefinement
-from module_evaluation import ArrayEvaluation
-from module_evaluated_arrays_enhancement import EvaluatedArraysEnhancement
-from module_non_array_computations import NonArrayComputations
-from module_output_maker import OutputMaker
+from components.module_detection import Detection
+from components.module_detection_refinement import DetectionRefinement
+from components.module_evaluation import ArrayEvaluation
+from components.module_evaluated_arrays_enhancement import EvaluatedArraysEnhancement
+from components.module_non_array_computations import NonArrayComputations
+from components.module_output_maker import OutputMaker
 
 
 class Pipeline:

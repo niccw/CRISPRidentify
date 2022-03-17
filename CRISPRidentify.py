@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import argparse
 import sys
 from os import listdir
@@ -10,8 +11,8 @@ import subprocess
 import warnings
 warnings.filterwarnings("ignore")
 sys.path.insert(0, 'components/')
-from pipeline import Pipeline
-from components_ml import ClassifierWrapper
+from components.pipeline import Pipeline
+from components.components_ml import ClassifierWrapper
 import shutil
 from time import time
 import math
@@ -176,7 +177,7 @@ best_combinations = {
 feature_list = ['.'.join([ALL_FEATURES[i] for i in best_combinations[model]]) for model in list_models]
 list_ml_classifiers = [ClassifierWrapper(classifier_type=None,
                                          load_option="trained_models/extra_trees/extra_trees_subset{}features.pkl".
-                                                     format(model))
+                                                     format(model)) 
                        for model in list_models]
 
 

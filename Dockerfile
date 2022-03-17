@@ -42,14 +42,14 @@ ENV PATH /home/crispr/miniconda3/condabin:~/miniconda3/bin:$PATH
 # creating CRISPRcasIdentifier's env and making it active by default
 # and removing additional unnecessary files (see https://jcristharif.com/conda-docker-tips.html)
 ENV PYTHONDONTWRITEBYTECODE=true
-COPY crispr-env.yml ./
-RUN conda env create -f crispr-env.yml -n crispr-env
+COPY requirements.txt ./
+RUN conda install --channel bioconda --channel biobuilds --channel bioconda/label/cf201901 --channel anaconda --channel conda-forge --channel defaults --file requirements.txt
 RUN conda clean --all --yes \
     && find ~/miniconda3/ -follow -type f -name '*.a' -delete \
     && find ~/miniconda3/ -follow -type f -name '*.pyc' -delete \
     && find ~/miniconda3/ -follow -type f -name '*.js.map' -delete
-RUN rm crispr-env.yml
-RUN echo "source ~/miniconda3/etc/profile.d/conda.sh && conda activate crispr-env" >> ~/.bashrc
+RUN rm requirements.txt
+RUN echo "source ~/miniconda3/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc
 
 # creating CRISPRcasIdentifier's folder and setting it as workdir
 RUN mkdir CRISPRidentify

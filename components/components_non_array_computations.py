@@ -4,7 +4,7 @@ from os import listdir
 from os.path import isfile, join
 import shutil
 
-from components_detection_refinement import CrisprCandidate
+from components.components_detection_refinement import CrisprCandidate
 
 #              Strand computation
 #######################################################
